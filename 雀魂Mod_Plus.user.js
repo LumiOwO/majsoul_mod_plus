@@ -3641,8 +3641,9 @@ function testAPI() {
                             W.record_start_time = m.start_time ? m.start_time : -1;
                         for (var A = 0; A < m.accounts.length; A++) {
                             var w = m.accounts[A];
+                            // console.log(w);
                             if (w.character) {
-                                var x = w.character,
+                                var x = w,
                                     Z = {};
                                 // 牌谱注入
                                 if (MMP.settings.setPaipuChar == true) {
