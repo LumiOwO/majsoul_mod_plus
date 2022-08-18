@@ -1436,7 +1436,7 @@ function testAPI() {
                                     if (T.rewarded_endings)
                                         for (var D = 0; D < T.rewarded_endings.length; D++)
                                             u.rewarded_endings_map[T.rewarded_endings[D]] = 1;
-                                    if (u.star_chars = [], T.character_sort && (u.star_chars = T.character_sort), Y.hidden_characters_map = {}, T.hidden_characters)
+                                    if (/*u.star_chars = [],*/ T.character_sort /*&& (u.star_chars = T.character_sort)*/, Y.hidden_characters_map = {}, T.hidden_characters)
                                         for (var m = 0, i = T.hidden_characters; m < i.length; m++) {
                                             var o = i[m];
                                             Y.hidden_characters_map[o] = 1
