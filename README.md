@@ -1,3 +1,34 @@
+## 修改/修复的内容
+- 加载本地设置的星标角色
+```js
+// ### original ###
+// if (z["star_chars"] = [], r["character_sort"] && (z["star_chars"] = r["character_sort"]), h["hidden_characters_map"] = {}, r["hidden_characters"])
+// ### fixed ### 
+if (/*z["star_chars"] = [],*/ r["character_sort"] /*&& (z["star_chars"] = r["character_sort"])*/, h["hidden_characters_map"] = {}, r["hidden_characters"])
+```
+- 保存皮肤
+   - "onChangeSkin"
+```js
+// 屏蔽换肤请求
+//  app["NetAgent"]["sendReq2Lobby"]("Lobby", "changeCharacterSkin", {
+//      character_id: h["characters"][this["_select_index"]]["charid"],
+//      skin: o
+//  }, function () {});
+// 保存皮肤
+MMP.settings.characters[this["_select_index"]] = o;
+MMP.saveSettings();
+```
+- 查看牌谱时显示皮肤
+```js
+if (g["character"]) {
+   // var s = X["character"], // ### original ###
+   var s = X, // ### fixed ###
+      u = {};
+   // 牌谱注入
+   ...
+}
+```
+
 # 雀魂mod_plus  
 雀魂解锁全角色、皮肤、装扮等，支持全部服务器 （ `CHINESE` / `ENGLISH` / `JAPANESE` ）。  
 Github: [雀魂mod_plus](https://github.com/Avenshy/majsoul_mod_plus)  

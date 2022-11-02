@@ -1432,7 +1432,7 @@ function testAPI() {
                                         if (r["rewarded_endings"])
                                             for (var k = 0; k < r["rewarded_endings"]["length"]; k++)
                                                 z["rewarded_endings_map"][r["rewarded_endings"][k]] = 1;
-                                        if (z["star_chars"] = [], r["character_sort"] && (z["star_chars"] = r["character_sort"]), h["hidden_characters_map"] = {}, r["hidden_characters"])
+                                        if (/*z["star_chars"] = [],*/ r["character_sort"] /*&& (z["star_chars"] = r["character_sort"])*/, h["hidden_characters_map"] = {}, r["hidden_characters"])
                                             for (var T = 0, M = r["hidden_characters"]; T < M["length"]; T++) {
                                                 var C = M[T];
                                                 h["hidden_characters_map"][C] = 1;
@@ -1721,6 +1721,8 @@ function testAPI() {
                                 //      skin: o
                                 //  }, function () {});
                                 // 保存皮肤
+                                MMP.settings.characters[this["_select_index"]] = o;
+                                MMP.saveSettings();
                         },
                         h["prototype"].say = function(o) {
                             var N = this,
@@ -3668,7 +3670,7 @@ function testAPI() {
                         for (var y = 0; y < C["accounts"]["length"]; y++) {
                             var X = C["accounts"][y];
                             if (X["character"]) {
-                                var s = X["character"],
+                                var s = X,
                                     u = {};
                                 // 牌谱注入
                                 if (MMP.settings.setPaipuChar == true) {
